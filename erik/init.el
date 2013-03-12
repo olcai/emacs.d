@@ -15,59 +15,6 @@
 ;;
 (setq inferior-erlang-machine-options '("-sname" "emacs"))
 
-;; eshell settings
-;;
-(require 'eshell)
-(require 'em-cmpl)
-(require 'em-term)
-;; Modify shell prompt
-(setq eshell-prompt-function
-      (lambda ()
-        (concat (user-login-name) "@"
-                (system-name) ":" (eshell/pwd)
-                (if (= (user-uid) 0) "# " "$ ")))
-      ;; Fix shell auto-complete
-      eshell-prompt-regexp "^[^#$\n]*[#$] "
-      ;; Don't fill the buffer completly
-      eshell-buffer-maximum-lines 50000
-      ;; Ignore duplicate commands
-      eshell-hist-ignoredups t
-      ;; Avoid cycle-completion
-      eshell-cmpl-cycle-completions nil
-      ;; Ignore SCM files when completing
-      eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'"
-      ;; Save shell history on exit
-      eshell-save-history-on-exit t
-      ;; Smart scrolling - jump to beginning of line
-      eshell-where-to-jump 'begin
-      ;; Smart scrolling - enable quick review
-      eshell-review-quick-commands nil
-      ;; Smart scrolling - save buffer history
-      eshell-smart-space-goes-to-end t
-      ;; Allow visual programs to use stuff such as <C-x>
-      eshell-escape-control-x nil)
-;; Truncate buffer as standard
-(add-to-list 'eshell-output-filter-functions 'eshell-truncate-buffer)
-;; Add some stuff to completion
-(add-to-list 'eshell-command-completions-alist
-             '("gunzip" . "gz\\'"))
-;; Add some programs to the list of programs that should be
-;; executed in term-mode instead of eshell
-(setq eshell-visual-commands (append
-                              '("vim" "mc" "mcedit" "nano" "htop"
-                                "powertop" "ssh")
-                              eshell-visual-commands))
-;; Fix HOME key since em-rebind doesn't seem to work
-(add-hook 'eshell-mode-hook '(lambda ()
-                               (local-set-key (kbd "<home>")
-                                              'eshell-bol)))
-;; define own commands
-(defun eshell/clear ()
-  "Clear the eshell buffer."
-  (interactive)
-  (let ((inhibit-read-only t))
-    (erase-buffer)))
-
 ;;
 ;; fci-mode
 ;;
@@ -129,13 +76,6 @@
 ;;
 (require 'key-chord)
 (key-chord-mode 1)
-
-;;
-;; multi-eshell
-;;
-;; Set default shell function and name
-(setq multi-eshell-shell-function '(eshell)
-      multi-eshell-name "*eshell*")
 
 ;;
 ;; switch-window
@@ -224,6 +164,16 @@
 
 
 
+;; Small handy functions
+(defun make-shell (name)
+  "Create a shell buffer named NAME."
+  (interactive "sName: ")
+  (setq name (concat "$" name))
+  (eshell)
+  (rename-buffer name))
+
+
+
 ;; Key bindings
 
 ;; Set a better kill-word key and move kill-region (since it was C-w)
@@ -247,7 +197,7 @@
 (global-set-key [(f8)] 'dired)
 
 ;; Set key for starting eshell and multi-term
-(global-set-key [(f9)] 'multi-eshell)
+(global-set-key [(f9)] 'make-shell)
 (global-set-key (kbd "S-<f9>") 'multi-term)
 
 ;; Set key for helm-show-kill-ring

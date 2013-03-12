@@ -21,7 +21,6 @@
                       ibuffer-vc
                       key-chord
                       markdown-mode
-                      multi-eshell
                       multi-term
                       nav
                       occidental-theme
