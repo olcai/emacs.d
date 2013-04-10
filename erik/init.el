@@ -6,6 +6,12 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 
 ;;
+;; deft
+;;
+(setq deft-extension "org")
+(setq deft-text-mode 'org-mode)
+
+;;
 ;; dired+
 ;;
 (require 'dired+)
