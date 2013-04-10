@@ -24,6 +24,7 @@
                       multi-term
                       nav
                       occidental-theme
+                      pcmpl-args
                       rainbow-mode
                       sauron
                       starter-kit
