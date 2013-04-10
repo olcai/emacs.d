@@ -160,6 +160,10 @@
 ;; General edit settings
 ;; Set fill-column
 (setq-default fill-column 80)
+;; Show column numbers
+(setq column-number-mode t)
+;; Automatically revert files when they change
+(global-auto-revert-mode 1)
 
 
 
