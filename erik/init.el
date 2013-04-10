@@ -186,11 +186,6 @@
 
 ;; Key bindings
 
-;; Set a better kill-word key and move kill-region (since it was C-w)
-(global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
-
 ;; Replace standard buffer list with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
