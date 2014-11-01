@@ -170,7 +170,8 @@
 (setq column-number-mode t)
 ;; Automatically revert files when they change
 (global-auto-revert-mode 1)
-
+;; Warn me if saving files with too long lines
+(add-hook 'after-save-hook 'et-check-long-lines)
 
 
 ;; RefTeX settings
