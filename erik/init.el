@@ -195,6 +195,9 @@
 ;; Replace standard buffer list with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; Set global key for storing links in org mode
+(global-set-key "\C-cl" 'org-store-link)
+
 ;; Set workgroup prefix key
 (setq wg-prefix-key (kbd "C-c w"))
 
@@ -214,12 +217,12 @@
 ;; Set key for helm-show-kill-ring
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
-;; Set additional key for helm-prelude
-(global-set-key [(f11)] 'helm-prelude)
+;; Set additional key for helm-power
+(global-set-key [(f11)] 'helm-power)
 
 ;; Set key chords
 (key-chord-define-global "hj" 'undo)
-(key-chord-define-global "hp" 'helm-prelude)
+(key-chord-define-global "hp" 'helm-power)
 
 ; frame actions
 (key-chord-define-global "xo" 'other-window)
