@@ -19,6 +19,7 @@
                       go-mode
                       helm
                       ibuffer-vc
+                      iedit
                       key-chord
                       markdown-mode
                       multi-term

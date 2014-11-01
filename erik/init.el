@@ -78,6 +78,12 @@
 (setq ido-show-dot-for-dired t)
 
 ;;
+;; iedit, used for quick jumping & editing of symbols
+;;
+(require 'iedit)
+(define-key iedit-lib-keymap (kbd "C-=") 'iedit-toggle-unmatched-lines-visible)
+
+;;
 ;; key-chord
 ;;
 (require 'key-chord)
