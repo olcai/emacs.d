@@ -44,8 +44,6 @@
                                    '("vim" "mc" "mcedit" "nano" "htop"
                                      "powertop" "ssh")
                                    eshell-visual-commands))
-     ;; Truncate buffer as standard
-     (add-to-list 'eshell-output-filter-functions 'eshell-truncate-buffer)
      ;; Add some stuff to completion
      (add-to-list 'eshell-command-completions-alist
                   '("gunzip" "gz\\'"))
