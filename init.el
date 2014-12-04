@@ -12,6 +12,7 @@
                       ack-and-a-half
                       auctex
                       bookmark+
+                      csharp-mode
                       crosshairs ;; Used by bookmark+
                       deft
                       dired+
@@ -24,8 +25,11 @@
                       markdown-mode
                       multi-term
                       nav
+                      nix-mode
                       occidental-theme
+                      omnisharp
                       pcmpl-args
+                      php-mode
                       rainbow-mode
                       sauron
                       starter-kit
@@ -33,6 +37,7 @@
                       textile-mode
                       undo-tree
                       workgroups
+                      yaml-mode
                       )
   "A list of packages to ensure are installed at launch.")
 
