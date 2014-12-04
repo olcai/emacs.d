@@ -215,6 +215,9 @@
 ;; Set workgroup prefix key
 (setq wg-prefix-key (kbd "C-c w"))
 
+;; Use switch-window instead of default function
+(global-set-key (kbd "C-x o") 'switch-window)
+
 ;; Set a key for starting nav
 (global-set-key [(f6)] 'nav)
 
