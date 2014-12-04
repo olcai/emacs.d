@@ -12,8 +12,11 @@
 (setq deft-text-mode 'org-mode)
 
 ;;
-;; dired+
+;; dired / dired+
 ;;
+(setq dired-dwim-target t) ;; Try to guess where to copy/move files (other
+                           ;; window)
+(setq diredp-hide-details-initially-flag nil) ;; Show details by default
 (require 'dired+)
 
 ;;
