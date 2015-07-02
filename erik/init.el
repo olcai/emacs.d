@@ -213,7 +213,9 @@
  kept-new-versions 6
  kept-old-versions 2
  version-control t)                           ; use versioned backups
-
+;; Autosave file handling
+(defvar my-auto-save-folder (concat "~/.emacs.d/auto-save"))
+(setq auto-save-file-name-transforms `((".*", my-auto-save-folder t)))
 
 
 ;; Small handy functions
