@@ -43,3 +43,9 @@
   "Pretty print JSON in buffer with Python."
   (interactive)
   (et-pretty-print-json-region (point-min) (point-max)))
+
+(require 'tramp)
+(defun et-sudired (dirname &optional switches)
+  "Open directory in dired as root."
+  (interactive (dired-read-dir-and-switches ""))
+  (dired (concat "/sudo::/" (file-truename dirname)) switches))
