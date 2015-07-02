@@ -10,24 +10,30 @@
 (defvar my-packages '(
                       ace-jump-mode
                       ack-and-a-half
+                      alchemist ;; Tooling for Elixir
                       auctex
                       bookmark+
                       csharp-mode
                       crosshairs ;; Used by bookmark+
                       deft
                       dired+
+                      dockerfile-mode
+                      elixir-mode
                       fill-column-indicator
                       go-mode
                       helm
                       ibuffer-vc
                       iedit
                       key-chord
+                      ledger-mode
                       markdown-mode
                       multi-term
+                      multiple-cursors
                       nav
                       nix-mode
                       occidental-theme
                       omnisharp
+                      password-store
                       pcmpl-args
                       php-mode
                       rainbow-mode
