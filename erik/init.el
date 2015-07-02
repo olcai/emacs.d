@@ -239,6 +239,9 @@
 ;; Set workgroup prefix key
 (setq wg-prefix-key (kbd "C-c w"))
 
+;; Set key for editing with multiple-cursors
+(global-set-key (kbd "C-c m") 'mc/mark-all-like-this-dwim)
+
 ;; Use switch-window instead of default function
 (global-set-key (kbd "C-x o") 'switch-window)
 
@@ -262,9 +265,6 @@
 (global-set-key [(f11)] 'helm-power)
 
 ;; Set key chords
-(key-chord-define-global "hj" 'undo)
-(key-chord-define-global "hp" 'helm-power)
-
 ; frame actions
 (key-chord-define-global "xo" 'other-window)
 (key-chord-define-global "x1" 'delete-other-windows)
