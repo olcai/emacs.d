@@ -195,6 +195,8 @@
 (global-auto-revert-mode 1)
 ;; Warn me if saving files with too long lines
 (add-hook 'after-save-hook 'et-check-long-lines)
+;; Always add newlines to eof
+(setq-default require-final-newline t)
 
 
 ;; RefTeX settings
