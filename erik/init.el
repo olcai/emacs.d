@@ -30,6 +30,14 @@
 (add-hook 'prog-mode-hook 'fci-mode t)
 
 ;;
+;; go-mode
+;;
+(defun my-go-mode-hook ()
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  (setq tab-width 4 indent-tabs-mode t))
+(add-hook 'go-mode-hook 'my-go-mode-hook)
+
+;;
 ;; helm
 ;;
 (setq helm-kill-ring-threshold 4)
@@ -91,6 +99,18 @@
 ;;
 (require 'key-chord)
 (key-chord-mode 1)
+
+;;
+;; php-mode
+;;
+(defun my-php-mode-hook ()
+  (setq indent-tabs-mode t)
+  (let ((my-tab-width 4))
+    (setq tab-width my-tab-width)
+    (setq c-basic-indent my-tab-width)
+    (set (make-local-variable 'tab-stop-list)
+         (number-sequence my-tab-width 200 my-tab-width))))
+(add-hook 'php-mode-hook 'my-php-mode-hook)
 
 ;;
 ;; switch-window
