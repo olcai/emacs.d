@@ -11,6 +11,7 @@
                       ace-jump-mode
                       ack-and-a-half
                       alchemist ;; Tooling for Elixir
+                      ansible-doc
                       auctex
                       bookmark+
                       csharp-mode
